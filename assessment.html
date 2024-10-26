@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ subject }} Assessment</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        nav {
+            background-color: #0f3460;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #e0e0e0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #e94560;
+            margin: 80px 0 20px;
+            text-align: center;
+            font-size: 2em;
+            letter-spacing: 0.1em;
+        }
+
+        form {
+            background-color: #16213e;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            margin: auto;
+            width: 80%;
+            max-width: 600px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #0f3460;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        button {
+            background-color: #e94560;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: flex-end;
+        }
+
+        button:hover {
+            background-color: #ff2e63;
+        }
+
+       /* Chatbot Styles */
+       .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            max-width: 90%;
+            background-color: #16213e;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #0f3460;
+            padding: 10px;
+            color: #e0e0e0;
+            text-align: center;
+        }
+
+        .chat-messages {
+            padding: 10px;
+            height: 200px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 5px;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 2px solid #0f3460;
+            border-radius: 8px;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        .chat-input button {
+            background-color: #e94560;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            background-color: #ff2e63;
+        }
+
+        footer {
+            padding: 15px;
+            background-color: #0f3460;
+            color: #e0e0e0;
+            text-align: center;
+            margin-top: auto;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+   <!-- Navbar -->
+   <nav>
+    <a href="/" style="color: white; text-decoration: none;">
+        <img src="/static/images/logo.jpg" alt="logo" style="height: 60px; width: 60px; border-radius: 50px;">
+    </a>
+    <div style="font-size: 24px; font-weight: bold; display: flex; align-items: center; gap: 50px;margin-right: 10%;">
+        
+        <span style="color: white; font-size: 20px;"><b>AssesAI</b></span>
+      
+    </div>
+</nav>
+
+    <form action="/results" method="POST">
+        <h1>{{ subject }} Assessment</h1>
+        <input type="hidden" name="subject" value="{{ subject }}">
+        {% for question in questions %}
+            <div>
+                <p>{{ loop.index }}. {{ question['question'] }}</p>
+                <input type="text" name="{{ question['question'] }}" required>
+            </div>
+        {% endfor %}
+        <button type="submit" style="background-color: black;">Submit Answers</button>
+    </form>
+
+   <!-- Chatbot -->
+   <div id="chatbot" style="position: fixed; bottom: 20px; right: 20px; width: 300px; background-color: #16213e; border-radius: 10px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+    <h2 style="color: #e94560; text-align: center;">Chatbot</h2>
+    <div id="chatbox" style="height: 200px; overflow-y: scroll; margin-bottom: 10px; border: 1px solid #0f3460; border-radius: 5px; padding: 5px; background-color: #1a1a2e;">
+    </div>
+    <input type="text" id="user-input" placeholder="Ask me something..." style="width: 100%; padding: 10px; border: 2px solid #0f3460; border-radius: 5px; margin-bottom: 5px;">
+    <button id="send-btn" style="width: 100%; padding: 10px; background-color: #e94560; color: white; border: none; border-radius: 5px;">Send</button>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p style="color: white;">Empowering Education for a Brighter Future!</p>
+    <p style="color: white;">&copy; 2024 GutsyCadre. All rights reserved.</p>
+</footer>
+
+<script>
+    // Sample questions and answers
+    const qaPairs = {
+        "What is the purpose of this platform?": "This platform is designed to assess and enhance your knowledge through various educational resources.",
+        "How can I reset my password?": "You can reset your password by clicking on the 'Forgot Password' link on the login page.",
+        "What subjects do you offer?": "We offer a variety of subjects including Mathematics, Science, and Language Arts.",
+        "How can I contact support?": "You can contact support through the 'Help' section located in the main menu.",
+        "What resources are available?": "We provide videos, articles, and interactive quizzes to aid your learning.",
+        // Add more questions and answers here
+        "How do I create an account?": "To create an account, click on the 'Sign Up' button on the homepage and fill in the required details.",
+        "hello are you good?" : "how you. "
+    };
+
+    const chatbox = document.getElementById("chatbox");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+    // Function to add message to chatbox
+    function addMessage(sender, message) {
+        const messageDiv = document.createElement("div");
+        messageDiv.textContent = `${sender}: ${message}`;
+        chatbox.appendChild(messageDiv);
+        chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
+    }
+
+    // Function for text-to-speech
+    function speak(text) {
+        const speech = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(speech);
+    }
+
+    // Event listener for send button
+    sendBtn.addEventListener("click", () => {
+        const userQuestion = userInput.value.trim();
+        if (userQuestion) {
+            addMessage("You", userQuestion);
+            userInput.value = ""; // Clear input
+
+            const answer = qaPairs[userQuestion] || "Sorry, I don't have an answer for that.";
+            addMessage("Chatbot", answer);
+            speak(answer); // Read the answer aloud
+        }
+    });
+
+    // Optional: Allow pressing Enter to send the message
+    userInput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            sendBtn.click();
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
