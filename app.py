@@ -12,7 +12,7 @@ from datetime import datetime
 from flask import Flask, request, jsonify
 import requests
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Load questions from CSV
 def load_questions():
@@ -170,7 +170,7 @@ def categorize_performance(score, total):
     else:
         return "Needs Improvement"
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     load_logistic_model()
     load_deep_learning_model()
     if model is None or dl_model is None:
