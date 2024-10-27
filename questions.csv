@@ -1,0 +1,42 @@
+assessment,question,answer,resources
+Mathematics,What is 2 + 2?,4,https://www.khanacademy.org/math
+Mathematics,What is the square root of 16?,4,https://www.khanacademy.org/math
+Mathematics,What is 7 times 8?,56,https://www.khanacademy.org/math
+Mathematics,What is 15 divided by 3?,5,https://www.khanacademy.org/math
+Mathematics,What is the value of π (pi)?,3.14,https://www.khanacademy.org/math
+Mathematics,What is 5 squared?,25,https://www.khanacademy.org/math
+Mathematics,What is the next prime number after 7?,11,https://www.khanacademy.org/math
+Mathematics,What is the sum of angles in a triangle?,180,https://www.khanacademy.org/math
+Life Science,What is the powerhouse of the cell?,Mitochondria,https://www.khanacademy.org/science/life-science
+Life Science,What is photosynthesis?,Process by which plants convert light into energy,https://www.khanacademy.org/science/life-science
+Life Science,What is the function of DNA?,Carries genetic information,https://www.khanacademy.org/science/life-science
+Life Science,What are enzymes?,Biological catalysts,https://www.khanacademy.org/science/life-science
+Life Science,What is the function of the cell membrane?,Controls what enters and leaves the cell,https://www.khanacademy.org/science/life-science
+Life Science,What is homeostasis?,Regulation of internal environment,https://www.khanacademy.org/science/life-science
+Life Science,What is the function of the cell membrane?,Controls what enters and leaves the cell,https://www.khanacademy.org/science/life-science
+Life Science,What are the types of cells?,Prokaryotic and Eukaryotic,https://www.khanacademy.org/science/life-science
+IT,What does HTML stand for?,HyperText Markup Language,https://www.w3schools.com/html/
+IT,What does CSS stand for?,Cascading Style Sheets,https://www.w3schools.com/css/
+IT,What is a server?,A computer that provides data to other computers,https://www.w3schools.com/whatis/
+IT,What is an algorithm?,A step-by-step procedure for calculations,https://www.khanacademy.org/computing/computer-science/algorithms
+IT,What is the purpose of a database?,To store and manage data,https://www.w3schools.com/sql/
+IT,What is a programming language?,A formal language comprising a set of instructions,https://www.khanacademy.org/computing/computer-programming
+IT,What is an API?,Application Programming Interface,https://www.w3schools.com/whatis/whatis_api.asp
+IT,What does HTTP stand for?,HyperText Transfer Protocol,https://www.w3schools.com/whatis/whatis_http.asp
+Engineering,What is the main focus of civil engineering?,Designing and constructing infrastructure,https://www.khanacademy.org/college-careers-more/engineering/civil-engineering
+Engineering,What is a load-bearing wall?,A wall that supports weight,https://www.khanacademy.org/college-careers-more/engineering/civil-engineering
+Engineering,What is the formula for calculating stress?,Stress = Force / Area,https://www.khanacademy.org/college-careers-more/engineering/civil-engineering
+Engineering,What is thermodynamics?,Study of energy and heat transfer,https://www.khanacademy.org/science/physics/thermodynamics
+Engineering,What is a circuit?,A path for electrical flow,https://www.khanacademy.org/science/electrical-engineering
+Engineering,What is fluid dynamics?,Study of fluids in motion,https://www.khanacademy.org/science/physics/fluids
+Engineering,What is a mechanical advantage?,The ratio of output force to input force,https://www.khanacademy.org/science/physics/simple-machines
+Engineering,What is structural integrity?,Ability of a structure to withstand its intended load,https://www.khanacademy.org/college-careers-more/engineering/civil-engineering
+History,Who was the first President of the United States?,George Washington,https://www.history.com/topics/us-presidents/george-washington
+History,What year did World War II end?,1945,https://www.history.com/topics/world-war-ii/world-war-ii
+History,Who was Martin Luther King Jr.?,Civil rights leader,https://www.history.com/topics/civil-rights/martin-luther-king-jr
+History,What ancient civilization built the pyramids?,Egyptians,https://www.history.com/topics/ancient-egypt/the-egyptian-pyramids
+History,What triggered the French Revolution?,The Estates-General,https://www.history.com/topics/france/french-revolution
+History,Who discovered America?,Christopher Columbus,https://www.history.com/topics/exploration/christopher-columbus
+History,What was the main cause of the Cold War?,Ideological conflict,https://www.history.com/topics/cold-war/cold-war
+History,What did the Emancipation Proclamation do?,Freed slaves in Confederate states,https://www.history.com/topics/american-civil-war/emancipation-proclamation
+
