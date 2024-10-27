@@ -1,0 +1,51 @@
+subject,question_id,score
+Mathematics,1,5
+Mathematics,2,4
+Mathematics,3,3
+Mathematics,4,2
+Mathematics,5,5
+Life Science,6,4
+Life Science,7,5
+Life Science,8,3
+Life Science,9,2
+Life Science,10,5
+IT,11,5
+IT,12,4
+IT,13,3
+IT,14,2
+IT,15,4
+Engineering,16,3
+Engineering,17,4
+Engineering,18,5
+Engineering,19,2
+Engineering,20,3
+History,21,5
+History,22,4
+History,23,3
+History,24,5
+History,25,4
+Mathematics,26,4
+Mathematics,27,3
+Life Science,28,5
+IT,29,2
+Engineering,30,3
+History,31,5
+Mathematics,32,3
+Life Science,33,4
+IT,34,5
+Engineering,35,3
+History,36,4
+Mathematics,37,2
+Life Science,38,5
+IT,39,4
+Engineering,40,3
+History,41,5
+Mathematics,42,4
+Life Science,43,3
+IT,44,2
+Engineering,45,5
+History,46,4
+Mathematics,47,3
+Life Science,48,5
+IT,49,2
+Engineering,50,4
